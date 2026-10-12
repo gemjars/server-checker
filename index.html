@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Best Server Picker</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Best Server Picker</h1>
+      <p class="subtitle">Pick where your players are, and find the fairest middle-ground server.</p>
+    </header>
+
+    <section class="card">
+      <h2>1. How many player locations?</h2>
+      <div class="count-toggle" role="group" aria-label="Number of player locations">
+        <button type="button" class="count-btn active" data-count="2">2 Players</button>
+        <button type="button" class="count-btn" data-count="4">4 Players</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>2. Select player locations</h2>
+      <div id="playerInputs" class="player-inputs"></div>
+    </section>
+
+    <section class="card">
+      <button type="button" id="findBtn" class="find-btn">Find Best Server</button>
+    </section>
+
+    <section class="card" id="resultsSection" hidden>
+      <h2>Results</h2>
+      <div id="bestPick" class="best-pick"></div>
+      <div id="resultsList" class="results-list"></div>
+      <p class="methodology">
+        Ranked by lowest <strong>worst-case distance</strong> to any selected player (fairest option),
+        then by lowest average distance. Ping is a rough estimate only (~1ms per 100km + 20ms overhead).
+      </p>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

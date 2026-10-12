@@ -1,0 +1,271 @@
+:root {
+  --bg: #0f1420;
+  --card-bg: #1a2233;
+  --border: #2c3650;
+  --text: #e8ecf4;
+  --muted: #9aa6bd;
+  --accent: #4f8cff;
+  --accent-2: #38d39f;
+  --danger: #ff6b6b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+}
+
+header h1 {
+  margin: 0 0 4px;
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 0 0 24px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.count-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.count-btn {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.count-btn:hover {
+  border-color: var(--accent);
+}
+
+.count-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.player-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.player-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.player-input-group label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.player-input-group select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #11182a;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.find-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent-2);
+  color: #06281e;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+
+.find-btn:hover {
+  filter: brightness(1.08);
+}
+
+.best-pick {
+  background: rgba(56, 211, 159, 0.12);
+  border: 1px solid var(--accent-2);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+}
+
+.best-pick strong {
+  color: var(--accent-2);
+  font-size: 1.3rem;
+}
+
+.results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 560px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.results-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.results-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.results-list::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 8px;
+}
+
+.result-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #141b2c;
+  padding: 12px 14px;
+}
+
+.result-card.is-best {
+  border-color: var(--accent-2);
+  background: rgba(56, 211, 159, 0.08);
+}
+
+.result-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.result-rank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--border);
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.result-card.is-best .result-rank {
+  background: var(--accent-2);
+  color: #06281e;
+}
+
+.result-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-right: auto;
+}
+
+.result-card.is-best .result-name {
+  color: var(--accent-2);
+}
+
+.result-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.result-badge {
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px 9px;
+  white-space: nowrap;
+}
+
+.result-players {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px 16px;
+}
+
+.player-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.player-chip-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.player-chip-value {
+  color: var(--text);
+}
+
+.player-chip-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.player-chip-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.result-card.is-best .player-chip-bar-fill {
+  background: var(--accent-2);
+}
+
+.methodology {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin: 16px 0 0;
+}
