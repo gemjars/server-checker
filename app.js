@@ -9,6 +9,7 @@ const SERVERS = [
   { id: "miami", name: "Miami", lat: 25.7617, lon: -80.1918 },
   { id: "sao_paulo", name: "Sao Paulo", lat: -23.5505, lon: -46.6333 },
   { id: "frankfurt", name: "Frankfurt", lat: 50.1109, lon: 8.6821 },
+  { id: "paris", name: "Paris", lat: 48.8566, lon: 2.3522 },
   { id: "london", name: "London", lat: 51.5074, lon: -0.1278 },
   { id: "warsaw", name: "Warsaw", lat: 52.2297, lon: 21.0122 },
   { id: "madrid", name: "Madrid", lat: 40.4168, lon: -3.7038 },
